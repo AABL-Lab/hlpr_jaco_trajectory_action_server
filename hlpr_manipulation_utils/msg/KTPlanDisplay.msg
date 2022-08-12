@@ -1,1 +1,0 @@
-moveit_msgs/RobotTrajectory[] plans
