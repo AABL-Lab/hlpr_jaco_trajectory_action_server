@@ -112,10 +112,10 @@ void JacoTrajectoryController::jointStateCallback(const sensor_msgs::JointState 
     int msg_loc = distance(pub_joint_names.begin(), find(pub_joint_names.begin(), pub_joint_names.end(), joint_name));
 
     // Pull out joint loc and store
-    arm_msg.position[joint_id] = msg.position[msg_loc];
-    arm_msg.name[joint_id] = msg.name[msg_loc];
-    arm_msg.velocity[joint_id] = msg.velocity[msg_loc];
-    arm_msg.effort[joint_id] = msg.effort[msg_loc];
+    arm_msg.position[joint_id] = msg.position.at(msg_loc);
+    arm_msg.name[joint_id] = msg.name.at(msg_loc);
+    arm_msg.velocity[joint_id] = msg.velocity.at(msg_loc);
+    arm_msg.effort[joint_id] = msg.effort.at(msg_loc);
   }
 
   jointStates = arm_msg;
